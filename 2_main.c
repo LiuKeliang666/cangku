@@ -11,15 +11,15 @@ int main()
 
     scanf("%d", &score);
 
-    if (score >= 90 && score <= 100)       {
+    if (score >= 90)       {
         printf("A\n");
-     }else if (score >= 80 && score <= 89) {
+     }else if (score >= 80) {
         printf("B\n");  
-     }else if (score >= 70 && score <= 79) {
+     }else if (score >= 70) {
         printf("C\n");
-     }else if (score >= 60 && score <= 69) {
+     }else if (score >= 60) {
         printf("D\n");
-     }else if (score >= 0 && score <= 60)  {
+     }else if (score >= 0 )  {
         printf("E\n");
      }else                                 {
         printf("输入成绩无效。\n");
