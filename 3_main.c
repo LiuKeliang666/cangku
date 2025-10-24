@@ -5,32 +5,21 @@
 
 int main() {
     int a, b;
-    char operator;
+    char op;
     
-    printf("请输入两个整数和一个运算符(+, -, *, /)：");
-    scanf("%d %d %c", &a, &b, &operator);
+    scanf("%d %d %c", &a, &b, &op);
     
-    switch(operator) {
-        case '+':
-            printf("%d\n", a + b);
-            break;
-        case '-':
-            printf("%d\n", a - b);
-            break;
-        case '*':
-            printf("%d\n", a * b);
-            break;
-        case '/':
-            
-            if(b != 0) {
-                printf("%d\n", a / b);
-            } else {
-                printf("错误：除数不能为0！\n");
-            }
-            break;
-        default:
-            printf("错误：不支持的运算方式！\n");
-            break;
+    if (op == '+') {
+        printf("%d", a + b);
+    } else if (op == '-') {
+        printf("%d", a - b);
+    } else if (op == '*') {
+        printf("%d", a * b);
+    } else if (op == '/') {
+        if (b != 0) {
+            printf("%d", a / b);
+        }
     }
     
     return 0;
+}
