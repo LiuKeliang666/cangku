@@ -5,15 +5,24 @@
 
 int main()
 {   
-    float celsius, fahrenheit;
+    int score;
+    
+    printf("请输入学生成绩：");
 
-    printf("请用户输入摄氏温度");
+    scanf("%d", &score);
 
-    scanf("%f",&celsius);
-
-    fahrenheit = celsius * 9.0 / 5.0 +32.0;
-
-    printf("华氏温度为: %.1f/n", fahrenheit);
-
-    return 0;   
-}   
+    if (score >= 90 && score <= 100)       {
+        printf("A\n");
+     }else if (score >= 80 && score <= 89) {
+        printf("B\n");  
+     }else if (score >= 70 && score <= 79) {
+        printf("B\n");
+     }else if (score >= 60 && score <= 69) {
+        printf("B\n");
+     }else if (score >= 0 && score <= 60)  {
+        printf("B\n");
+     }else                                 {
+        printf("输入成绩无效。\n");
+     }
+      return 0;
+}
