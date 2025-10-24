@@ -16,11 +16,11 @@ int main()
      }else if (score >= 80 && score <= 89) {
         printf("B\n");  
      }else if (score >= 70 && score <= 79) {
-        printf("B\n");
+        printf("C\n");
      }else if (score >= 60 && score <= 69) {
-        printf("B\n");
+        printf("D\n");
      }else if (score >= 0 && score <= 60)  {
-        printf("B\n");
+        printf("E\n");
      }else                                 {
         printf("输入成绩无效。\n");
      }
