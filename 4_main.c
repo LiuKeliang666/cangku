@@ -4,16 +4,31 @@
 #include <stdio.h>
 
 int main() {
-    int a, b, c;
+    int num = 100;
+    int count = 0; 
     
-    // 输入三个整数
-    scanf("%d %d %d", &a, &b, &c);
-    
-    // 判断是否能组成三角形
-    if (a + b > c && a + c > b && b + c > a) {
-        printf("可以组成三角形");
-    } else {
-        printf("不能组成三角形");
+    while (num <= 999) {
+        int original = num;
+        int sum = 0;
+        
+        // 使用while循环计算各位数字的立方和
+        int temp = num;
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += digit * digit * digit;
+            temp = temp / 10;
+        }
+        
+        // 判断是否为水仙花数
+        if (sum == num) {
+            if (count > 0) {
+                printf(" "); // 在数字前加空格（第一个数字前不加）
+            }
+            printf("%d", num);
+            count++;
+        }
+        
+        num++;
     }
     
     return 0;
