@@ -2,27 +2,28 @@
 //1443785738@qq.com
 //刘科良
 #include <stdio.h>
+#include <math.h>
 
-int main()
-{   
-    int score;
+int main() {
+    int count = 0; 
+    // 遍历100到999的所有数
+    for (int num = 100; num <= 999; num++) {
+        int hundreds = num / 100;        // 百位数
+        int tens = (num / 10) % 10;      // 十位数
+        int units = num % 10;            // 个位数
+        
+        // 计算各位数字的立方和
+        int sum = pow(hundreds, 3) + pow(tens, 3) + pow(units, 3);
+        
+        // 判断是否为水仙花数
+        if (sum == num) {
+            if (count > 0) {
+                printf(" "); // 在数字前加空格（第一个数字前不加）
+            }
+            printf("%d", num);
+            count++;
+        }
+    }
     
-    printf("请输入学生成绩：");
-
-    scanf("%d", &score);
-
-    if (score >= 90)       {
-        printf("A\n");
-     }else if (score >= 80) {
-        printf("B\n");  
-     }else if (score >= 70) {
-        printf("C\n");
-     }else if (score >= 60) {
-        printf("D\n");
-     }else if (score >= 0 )  {
-        printf("E\n");
-     }else                                 {
-        printf("输入成绩无效。\n");
-     }
-      return 0;
+    return 0;
 }
