@@ -3,26 +3,26 @@
 //刘科良
 #include <stdio.h>
 
+void reverse_array(int arr[], int len) {
+    for (int i = 0; i < len / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[len - 1 - i];
+        arr[len - 1 - i] = temp;
+    }
+}
+
 int main() {
-    int record[5];
-    int i;
-
-    printf("请输入前4位学号：");
-    for (i = 0; i < 4; i++) {
-        scanf("%d", &record[i]);
+    int arr[5];
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
     }
-
-    for (i = 4; i > 0; i--) {
-        record[i] = record[i - 1];
+    reverse_array(arr, 5);
+    for (int i = 0; i < 5; i++) {
+        printf("%d", arr[i]);
+        if (i < 4) {
+            printf(" ");
+        }
     }
-
-    record[0] = 0;//补充0
-
-    printf("更新后的提交记录：");
-    printf("%d", record[0]);
-    for (i = 1; i < 5; i++) {
-        printf(" %d", record[i]);
-    }
-
+    printf("\n");
     return 0;
 }
