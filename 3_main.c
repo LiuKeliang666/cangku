@@ -4,36 +4,25 @@
 #include <stdio.h>
 
 int main() {
-    int n;
-    
-    scanf("%d", &n);
-    
-    if (n <= 0 || n >= 50) {
-        printf("输入无效，请输入小于50的正整数\n");
-        return 0;
+    int arr[10];
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &arr[i]);
     }
-    
-    if (n == 1) {
-        printf("密钥不安全，请重新输入");
-        return 0;
-    }
-    
-    int isPrime = 1; // 假设是质数
-    int i = 2;
-    
-    while (i * i <= n) {
-        if (n % i == 0) {
-            isPrime = 0; // 找到因子，不是质数
-            break;
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
         }
-        i++;
     }
-    
-    if (isPrime) {
-        printf("密钥安全，密码设置成功");
-    } else {
-        printf("密钥不安全，请重新输入");
+    for (int i = 0; i < 10; i++) {
+        printf("%d", arr[i]);
+        if (i < 9) {
+            printf(" ");
+        }
     }
-    
+    printf("\n");
     return 0;
 }
