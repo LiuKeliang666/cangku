@@ -3,22 +3,13 @@
 //刘科良
 #include <stdio.h>
 
-int main() {
-    int arr[5];
-    int sum = 0;
-    
-    for (int i = 0; i < 4; i++) {
-        scanf("%d", &arr[i]);
-        sum += arr[i];
-    }
-    arr[4] = sum;
+int sum_arithmetic(int a, int b, int c) {
+    int count = (b - a) / c + 1;
+    return count * (a + b) / 2;
+}
 
-    for (int i = 0; i < 5; i++) {
-        if (i == 0) {
-            printf("%d", arr[i]);
-        } else {
-            printf(" %d", arr[i]);
-        }
-    }
+int main() {
+    int result = sum_arithmetic(1, 100, 1);
+    printf("%d\n", result);
     return 0;
 }
