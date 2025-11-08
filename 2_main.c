@@ -4,24 +4,20 @@
 #include <stdio.h>
 
 int main() {
-    int num, hundreds, tens, units;
-    int first_output = 1;
-    
-    for (num = 100; num <= 999; num++) {
-        // 拆分各位数字
-        hundreds = num / 100;
-        tens = (num / 10) % 10;
-        units = num % 10;
-        
-        // 判断是否为水仙花数
-        if (hundreds*hundreds*hundreds + tens*tens*tens + units*units*units == num) {
-            if (first_output) {
-                printf("%d", num);
-                first_output = 0;
-            } else {
-                printf(" %d", num);
+    int matrix[3][3];
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d", matrix[j][i]);
+            if (j < 2) {
+                printf(" ");
             }
         }
+        printf("\n");
     }
     return 0;
 }
