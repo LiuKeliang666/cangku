@@ -2,30 +2,19 @@
 //1443785738@qq.com
 //刘科良
 #include <stdio.h>
-
-int array_sum(int arr[], int len) {
-    int sum = 0;
-    for (int i = 0; i < len; i++) {
-        sum += arr[i];
-    }
-    return sum;
-}
-
-int array_product(int arr[], int len) {
-    int product = 1;
-    for (int i = 0; i < len; i++) {
-        product *= arr[i];
-    }
-    return product;
-}
-
+#include <stdlib.h>  // 包含malloc/free函数
 int main() {
-    int arr[5];
+    // 动态申请5个int的内存（每个int占4字节，共20字节）
+    int *ptr = (int *)malloc(5 * sizeof(int));
+    // 输入数据
     for (int i = 0; i < 5; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", ptr + i);
     }
-    int sum = array_sum(arr, 5);
-    int product = array_product(arr, 5);
-    printf("%d %d\n", sum, product); 
+    // 输出数据
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", *(ptr + i));
+    }
+    free(ptr);  // 释放动态内存，避免内存泄漏
+    ptr = NULL; // 指针置空，避免悬空指针
     return 0;
 }
