@@ -2,27 +2,16 @@
 //1443785738@qq.com
 //刘科良
 #include <stdio.h>
-
+// 指针参数实现交换
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 int main() {
-    int arr[10];
-    for (int i = 0; i < 10; i++) {
-        scanf("%d", &arr[i]);
-    }
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9 - i; j++) {
-            if (arr[j] > arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-    for (int i = 0; i < 10; i++) {
-        printf("%d", arr[i]);
-        if (i < 9) {
-            printf(" ");
-        }
-    }
-    printf("\n");
+    int x, y;
+    scanf("%d %d", &x, &y);
+    swap(&x, &y);   // 传入变量地址
+    printf("%d %d\n", x, y);
     return 0;
 }
